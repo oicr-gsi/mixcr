@@ -135,7 +135,7 @@
         },
         "id": "mixcr_test_small",
         "metadata": {
-            "mixcr.iexportedClones": {
+            "mixcr.exportedClones": {
                 "contents": [
                     {
                         "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_small_@JENKINSID@"
