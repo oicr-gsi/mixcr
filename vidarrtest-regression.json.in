@@ -58,7 +58,7 @@
         },
         "id": "mixcr_test_large",
         "metadata": {
-            "mixcr.result": {
+            "mixcr.exportedClones": {
                 "contents": [
                     {
                         "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_large_@JENKINSID@"
@@ -135,7 +135,7 @@
         },
         "id": "mixcr_test_small",
         "metadata": {
-            "mixcr.result": {
+            "mixcr.iexportedClones": {
                 "contents": [
                     {
                         "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_small_@JENKINSID@"
