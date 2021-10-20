@@ -1,0 +1,44 @@
+## Commands
+
+This section lists command(s) run by MIXCr workflow
+
+* Running MIXCr
+
+In its current implementation MIXCr workflow runs with RNAseq data as it's only type of input
+The same analysis may be conducted with a single wrapper command *analyze shotgun* but for the sake of
+flexibility and better control the analysis is divided into several tasks
+
+ALIGN
+
+```
+ java -jar mixcr.jar align -p ~{parameters} -s ~{organism} ~{"-OallowPartialAlignments=" + allowPartial} \
+                        ~{"-t " + threads} ~{"-b " + library} ~{"-r " + reportFile} FASTQ_R1 FASTQ_R2 alignments.vdjca
+```
+ASSEMBLE PARTIAL
+
+```
+ java -jar mixcr.jar assemblePartial ~{alignments} ~{"-t " + threads} ~{"-r " + reportFile} alignments_rescued_1.vdjca
+ java -jar mixcr.jar assemblePartial alignments_rescued_1.vdjca ~{"-t " + threads} ~{"-r " + reportFile} alignments_rescued_2.vdjca
+
+```
+
+EXTEND
+
+```
+ java -jar mixcr.jar extend ~{alignments_rescued} alignments_rescued_extended.vdjca
+
+```
+
+ASSEMBLE
+
+```
+ java -jar mixcr.jar assemble ~{extendedAlignments} ~{customPrefix + "_clones.clns"}
+
+```
+
+EXPORT CLONES
+
+```
+ java -jar mixcr.jar exportClones ~{assembledClones} -v ~{"-p " + preset} ~{customPrefix + "_clones.det.txt"}
+
+````

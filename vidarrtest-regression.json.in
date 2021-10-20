@@ -1,0 +1,150 @@
+[
+    {
+      "arguments": {
+          "mixcr.fastqR1": {
+              "contents": {
+                  "configuration": "/.mounts/labs/gsi/testdata/mixcr/input_data/EPT105_A_R1_001.fastq.gz",
+                  "externalIds": [
+                      {
+                          "id": "TEST",
+                          "provider": "TEST"
+                      }
+                  ]
+              },
+              "type": "EXTERNAL"
+          },
+          "mixcr.fastqR2": {
+              "contents": {
+                  "configuration": "/.mounts/labs/gsi/testdata/mixcr/input_data/EPT105_A_R2_001.fastq.gz",
+                  "externalIds": [
+                      {
+                          "id": "TEST",
+                          "provider": "TEST"
+                      }
+                  ]
+              },
+              "type": "EXTERNAL"
+          },
+          "mixcr.alignReads.allowPartial": null,
+          "mixcr.alignReads.jobMemory": null,
+	  "mixcr.alignReads.library": null,
+	  "mixcr.alignReads.modules": null,
+	  "mixcr.alignReads.organism": null,
+	  "mixcr.alignReads.parameters": null,
+	  "mixcr.alignReads.reportFile": null,
+	  "mixcr.alignReads.threads": null,
+	  "mixcr.alignReads.timeout": null,
+	  "mixcr.assemble.jobMemory": null,
+	  "mixcr.assemble.modules": null,
+	  "mixcr.assemblePartial.jobMemory": null,
+	  "mixcr.assemblePartial.modules": null,
+	  "mixcr.assemblePartial.reportFile": null,
+	  "mixcr.assemblePartial.threads": null,
+	  "mixcr.assemblePartial.timeout": null,
+	  "mixcr.assemble.timeout": null,
+	  "mixcr.exportClones.jobMemory": null,
+	  "mixcr.exportClones.modules": null,
+	  "mixcr.exportClones.preset": null,
+	  "mixcr.exportClones.timeout": null,
+	  "mixcr.extendAlignments.jobMemory": null,
+	  "mixcr.extendAlignments.modules": null,
+	  "mixcr.extendAlignments.timeout": null,
+	  "mixcr.outputFileNamePrefix": "TEST_LARGE"
+        },
+        "description": "MIXCr workflow test",
+        "engineArguments": {},
+        "id": "mixcr_test_large",
+        "metadata": {
+            "mixcr.result": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_large_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/mixcr/output_metrics/mixcr_test_large.metrics",
+                "type": "script"
+            }
+        ]
+    },
+    {
+      "arguments": {
+          "mixcr.fastqR1": {
+              "contents": {
+                  "configuration": "/.mounts/labs/gsi/testdata/mixcr/input_data/EPT105_B_R1_001.fastq.gz",
+                  "externalIds": [
+                      {
+                          "id": "TEST",
+                          "provider": "TEST"
+                      }
+                  ]
+              },
+              "type": "EXTERNAL"
+          },
+          "mixcr.fastqR2": {
+              "contents": {
+                  "configuration": "/.mounts/labs/gsi/testdata/mixcr/input_data/EPT105_B_R2_001.fastq.gz",
+                  "externalIds": [
+                      {
+                          "id": "TEST",
+                          "provider": "TEST"
+                      }
+                  ]
+              },
+              "type": "EXTERNAL"
+          },
+          "mixcr.alignReads.allowPartial": null,
+          "mixcr.alignReads.jobMemory": null,
+	  "mixcr.alignReads.library": null,
+	  "mixcr.alignReads.modules": null,
+	  "mixcr.alignReads.organism": null,
+	  "mixcr.alignReads.parameters": null,
+	  "mixcr.alignReads.reportFile": null,
+	  "mixcr.alignReads.threads": null,
+	  "mixcr.alignReads.timeout": null,
+	  "mixcr.assemble.jobMemory": null,
+	  "mixcr.assemble.modules": null,
+	  "mixcr.assemblePartial.jobMemory": null,
+	  "mixcr.assemblePartial.modules": null,
+	  "mixcr.assemblePartial.reportFile": null,
+	  "mixcr.assemblePartial.threads": null,
+	  "mixcr.assemblePartial.timeout": null,
+	  "mixcr.assemble.timeout": null,
+	  "mixcr.exportClones.jobMemory": null,
+	  "mixcr.exportClones.modules": null,
+	  "mixcr.exportClones.preset": null,
+	  "mixcr.exportClones.timeout": null,
+	  "mixcr.extendAlignments.jobMemory": null,
+	  "mixcr.extendAlignments.modules": null,
+	  "mixcr.extendAlignments.timeout": null,
+	  "mixcr.outputFileNamePrefix": "TEST_SMALL"
+        },
+        "description": "MIXCr workflow test",
+        "engineArguments": {},
+        "id": "mixcr_test_small",
+        "metadata": {
+            "mixcr.result": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_small_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            }
+        },
+        "validators": [
+            {
+                "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
+                "metrics_compare": "@CHECKOUT@/tests/compare.sh",
+                "output_metrics": "/.mounts/labs/gsi/testdata/mixcr/output_metrics/mixcr_test_small.metrics",
+                "type": "script"
+            }
+        ]
+    }
+]
