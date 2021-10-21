@@ -38,14 +38,14 @@ Parameter|Value|Default|Description
 `alignReads.threads`|Int?|None|Optional threads parameter
 `alignReads.parameters`|String|"rna-seq"|Customize the type of the data analysis, possible values are rna-seq, kAligner2 and default
 `alignReads.organism`|String|"hsa"|Organism recognized by MIXCr, hsa, mmu or rat (others possible).
-`alignReads.reportFile`|String?|None|Optionally, specify a name of a report file
+`alignReads.reportFile`|String|"alignments.report"|Optionally, specify a name of a report file
 `alignReads.library`|String?|None|Optional custom V D J library for customization of analysis
 `alignReads.allowPartial`|String?|None|A useful parameter to allow partial alignments, set to true if needed
 `alignReads.modules`|String|"mixcr/3.0.13"|Names and versions of required modules.
 `assemblePartial.jobMemory`|Int|8|Memory allocated to the task.
 `assemblePartial.timeout`|Int|20|Timeout in hours, needed to override imposed limits.
 `assemblePartial.threads`|Int?|None|Threads param for fastqc
-`assemblePartial.reportFile`|String?|None|Optionally, specify a name of a report file
+`assemblePartial.reportFile`|String|"rescued_allignments.report"|Optionally, specify a name of a report file
 `assemblePartial.modules`|String|"mixcr/3.0.13"|Names and versions of required modules.
 `extendAlignments.jobMemory`|Int|8|Memory allocated to this task.
 `extendAlignments.timeout`|Int|1|Timeout, in hours, needed to override imposed limits.
@@ -63,6 +63,8 @@ Parameter|Value|Default|Description
 
 Output | Type | Description
 ---|---|---
+`alignmentReport`|File|Reporting alignment metrics
+`rescuedReport`|File|Reporting rescued alignments results
 `exportedClones`|File|human-readable export of clone assembly results
 
 

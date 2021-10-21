@@ -39,11 +39,15 @@ meta {
       }
     ]
     output_meta: {
+        alignmentReport: "Reporting alignment metrics",
+        rescuedReport: "Reporting rescued alignments results",
         exportedClones: "human-readable export of clone assembly results"
     }
 }
 
 output {
+  File alignmentReport = alignReads.report
+  File rescuedReport = assemblePartial.report
   File exportedClones = exportClones.exportedClones
 }
 }
@@ -59,7 +63,7 @@ input {
   Int? threads
   String parameters = "rna-seq"
   String organism = "hsa"
-  String? reportFile
+  String reportFile = "alignments.report"
   String? library
   String? allowPartial
   File R1
@@ -70,7 +74,7 @@ input {
 command <<<
  set -euo pipefail
  unset _JAVA_OPTIONS
- java -Xmx~{jobMemory - 4}G -Xms~{jobMemory - 5}G -jar $MIXCR_ROOT/bin/mixcr.jar align -p ~{parameters} -s ~{organism} ~{"-OallowPartialAlignments=" + allowPartial} ~{"-t " + threads} ~{"-b " + library} ~{"-r " + reportFile} ~{R1} ~{R2} alignments.vdjca
+ java -Xmx~{jobMemory - 4}G -Xms~{jobMemory - 5}G -jar $MIXCR_ROOT/bin/mixcr.jar align -p ~{parameters} -s ~{organism} ~{"-OallowPartialAlignments=" + allowPartial} ~{"-t " + threads} ~{"-b " + library} -r ~{reportFile} ~{R1} ~{R2} alignments.vdjca
 >>>
 
 parameter_meta {
@@ -95,6 +99,7 @@ runtime {
 
 output {
   File alignmentFile = "alignments.vdjca"
+  File report = "~{reportFile}"
 }
 }
 
@@ -106,7 +111,7 @@ input {
   Int  jobMemory = 8
   Int  timeout   = 20
   Int? threads
-  String? reportFile
+  String reportFile = "rescued_allignments.report"
   File alignments
   String modules = "mixcr/3.0.13"
 }
@@ -114,8 +119,8 @@ input {
 command <<<
  set -euo pipefail
  unset _JAVA_OPTIONS
- java -Xmx~{jobMemory - 4}G -Xms~{jobMemory - 5}G -jar $MIXCR_ROOT/bin/mixcr.jar assemblePartial ~{alignments} ~{"-t " + threads} ~{"-r " + reportFile} alignments_rescued_1.vdjca
- java -Xmx~{jobMemory - 4}G -Xms~{jobMemory - 5}G -jar $MIXCR_ROOT/bin/mixcr.jar assemblePartial alignments_rescued_1.vdjca ~{"-t " + threads} ~{"-r " + reportFile} alignments_rescued_2.vdjca
+ java -Xmx~{jobMemory - 4}G -Xms~{jobMemory - 5}G -jar $MIXCR_ROOT/bin/mixcr.jar assemblePartial ~{alignments} ~{"-t " + threads} alignments_rescued_1.vdjca
+ java -Xmx~{jobMemory - 4}G -Xms~{jobMemory - 5}G -jar $MIXCR_ROOT/bin/mixcr.jar assemblePartial alignments_rescued_1.vdjca ~{"-t " + threads} -r ~{reportFile} alignments_rescued_2.vdjca
 >>>
 
 parameter_meta {
@@ -135,6 +140,7 @@ runtime {
 
 output {
   File alignments_rescued = "alignments_rescued_2.vdjca"
+  File report = "~{reportFile}"
 }
 }
 
