@@ -95,7 +95,6 @@ runtime {
 
 output {
   File alignmentFile = "alignments.vdjca"
-  File? report = "~{reportFile}"
 }
 }
 
