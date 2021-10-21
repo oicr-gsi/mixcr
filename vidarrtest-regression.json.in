@@ -65,6 +65,22 @@
                     }
                 ],
                 "type": "ALL"
+            },
+            "mixcr.alignmentReport": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_large_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "mixcr.rescuedReport": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_large_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
             }
         },
         "validators": [
@@ -136,6 +152,22 @@
         "id": "mixcr_test_small",
         "metadata": {
             "mixcr.exportedClones": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_small_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+             "mixcr.alignmentReport": {
+                "contents": [
+                    {
+                        "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_small_@JENKINSID@"
+                    }
+                ],
+                "type": "ALL"
+            },
+            "mixcr.rescuedReport": {
                 "contents": [
                     {
                         "outputDirectory": "@SCRATCH@/@DATE@_Workflow_mixcr_mixcr_test_small_@JENKINSID@"
