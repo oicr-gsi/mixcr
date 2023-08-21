@@ -4,8 +4,8 @@ MiXCR is a universal software for fast and accurate T- and B- cell receptor repe
 
 ## Dependencies
 
-* [mixcr 3.0.13](https://github.com/milaboratory/mixcr/releases/download/v3.0.13/mixcr-3.0.13.zip)
-* [java 8](https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/jdk8u222-b10/OpenJDK8U-jdk_x64_linux_8u222b10.tar.gz)
+* [mixcr 4.4.2](https://github.com/milaboratory/mixcr/releases/download/v4.4.2/mixcr-4.4.2.zip)
+* [java 14](https://github.com/AdoptOpenJDK/openjdk8-upstream-binaries/releases/download/OpenJDK14U-jdk_x64_linux_8u222b10.tar.gz)
 
 
 ## Usage
@@ -21,7 +21,8 @@ java -jar cromwell.jar run mixcr.wdl --inputs inputs.json
 Parameter|Value|Description
 ---|---|---
 `fastqR1`|File|Input file with the first mate reads.
-`fastqR2`|File| Input file with the second mate reads.
+`fastqR2`|File|Input file with the second mate reads.
+`license`|String|Path to mi.licence file with license
 
 
 #### Optional workflow parameters:
@@ -41,22 +42,22 @@ Parameter|Value|Default|Description
 `alignReads.reportFile`|String|"alignments.report"|Optionally, specify a name of a report file
 `alignReads.library`|String?|None|Optional custom V D J library for customization of analysis
 `alignReads.allowPartial`|String?|None|A useful parameter to allow partial alignments, set to true if needed
-`alignReads.modules`|String|"mixcr/3.0.13"|Names and versions of required modules.
+`alignReads.modules`|String|"mixcr/4.4.2"|Names and versions of required modules.
 `assemblePartial.jobMemory`|Int|8|Memory allocated to the task.
 `assemblePartial.timeout`|Int|20|Timeout in hours, needed to override imposed limits.
 `assemblePartial.threads`|Int?|None|Threads param for fastqc
 `assemblePartial.reportFile`|String|"rescued_allignments.report"|Optionally, specify a name of a report file
-`assemblePartial.modules`|String|"mixcr/3.0.13"|Names and versions of required modules.
+`assemblePartial.modules`|String|"mixcr/4.4.2"|Names and versions of required modules.
 `extendAlignments.jobMemory`|Int|8|Memory allocated to this task.
 `extendAlignments.timeout`|Int|1|Timeout, in hours, needed to override imposed limits.
-`extendAlignments.modules`|String|"mixcr/3.0.13"|Names and versions of required modules.
+`extendAlignments.modules`|String|"mixcr/4.4.2"|Names and versions of required modules.
 `assemble.jobMemory`|Int|8|Memory allocated to this task.
 `assemble.timeout`|Int|1|Timeout, in hours, needed to override imposed limits.
-`assemble.modules`|String|"mixcr/3.0.13"|Names and versions of required modules.
+`assemble.modules`|String|"mixcr/4.4.2"|Names and versions of required modules.
 `exportClones.jobMemory`|Int|8|Memory allocated to this task.
 `exportClones.timeout`|Int|1|Timeout, in hours, needed to override imposed limits.
 `exportClones.preset`|String?|None|Optional string specifying preset for output scope, full (default) min, fullImputed or minImpute
-`exportClones.modules`|String|"mixcr/3.0.13"|Names and versions of required modules.
+`exportClones.modules`|String|"mixcr/4.4.2"|Names and versions of required modules.
 
 
 ### Outputs

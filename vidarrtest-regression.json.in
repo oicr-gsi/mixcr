@@ -49,6 +49,7 @@
 	  "mixcr.extendAlignments.jobMemory": null,
 	  "mixcr.extendAlignments.modules": null,
 	  "mixcr.extendAlignments.timeout": null,
+          "mixcr.license": "/.mounts/labs/gsi/testdata/mixcr/4.4.2/license/mi.license",
 	  "mixcr.outputFileNamePrefix": "TEST_LARGE"
         },
         "description": "MIXCr workflow test",
@@ -87,7 +88,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/mixcr/output_metrics/mixcr_test_large.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/mixcr/4.4.2/output_metrics/mixcr_test_large.metrics",
                 "type": "script"
             }
         ]
@@ -142,13 +143,14 @@
 	  "mixcr.extendAlignments.jobMemory": null,
 	  "mixcr.extendAlignments.modules": null,
 	  "mixcr.extendAlignments.timeout": null,
+          "mixcr.license": "/.mounts/labs/gsi/testdata/mixcr/4.4.2/license/mi.license",
 	  "mixcr.outputFileNamePrefix": "TEST_SMALL"
         },
         "description": "MIXCr workflow test",
         "engineArguments": {
            "write_to_cache": false,
            "read_from_cache": false
-        },
+        } ,
         "id": "mixcr_test_small",
         "metadata": {
             "mixcr.exportedClones": {
@@ -180,7 +182,7 @@
             {
                 "metrics_calculate": "@CHECKOUT@/tests/calculate.sh",
                 "metrics_compare": "@CHECKOUT@/tests/compare.sh",
-                "output_metrics": "/.mounts/labs/gsi/testdata/mixcr/output_metrics/mixcr_test_small.metrics",
+                "output_metrics": "/.mounts/labs/gsi/testdata/mixcr/4.4.2/output_metrics/mixcr_test_small.metrics",
                 "type": "script"
             }
         ]
