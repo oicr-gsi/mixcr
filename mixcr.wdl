@@ -39,10 +39,19 @@ meta {
       }
     ]
     output_meta: {
-        alignmentReport: "Reporting alignment metrics",
-        rescuedReport: "Reporting rescued alignments results",
-        exportedClones: "human-readable export of clone assembly results"
+    alignmentReport: {
+        description: "Reporting alignment metrics",
+        vidarr_label: "alignmentReport"
+    },
+    rescuedReport: {
+        description: "Reporting rescued alignments results",
+        vidarr_label: "rescuedReport"
+    },
+    exportedClones: {
+        description: "human-readable export of clone assembly results",
+        vidarr_label: "exportedClones"
     }
+}
 }
 
 output {
